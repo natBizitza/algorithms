@@ -1,5 +1,5 @@
 function traverseArray(currentArr){
-    let newArr = [];
+    let newArr = [-1,-1,-1,-1,-1,-1,-1,-1];
     let leftCell;
     let rightCell;
     console.log(currentArr)
@@ -17,10 +17,10 @@ function traverseArray(currentArr){
             rightCell = currentArr[i+1];
             console.log(rightCell)
             if(rightCell === 0){
-                newArr.push(0);
+                newArr[i]=0;
                 console.log(newArr)
             }else{
-                newArr.push(1);
+                newArr[i]=1;
                 console.log(newArr)
             }
         }else{
@@ -33,7 +33,7 @@ function traverseArray(currentArr){
                 rightCell = currentArr[i+1];
             }
 
-            rightCell === leftCell? newArr.push(0): newArr.push(1);
+            rightCell === leftCell? newArr[i]=0: newArr[i]=1;
         }
     }
     
@@ -47,7 +47,7 @@ function cellComplete(states, days){
     for(var i=0; i < days; i++){
         console.log(res);
 
-       res = traverseArray(res);
+        res = traverseArray(res);
     }
     
     return res;
